@@ -7,11 +7,9 @@ public:
 
         while (start < nums.size()) {
             int minNum = nums[start];
-
             while (start + 1 < nums.size() && nums[start + 1] - minNum <= k) {
                 start++;
             }
-
             res++;
             start++;
         }

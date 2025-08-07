@@ -4,12 +4,13 @@ public:
         int n = moveTime.size();
         int m = moveTime[0].size();
         vector<vector<int>> dist(n, vector<int>(m, INT_MAX));
-        priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<>> pq;
+        priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater<>> pq;
 
         dist[0][0] = 0;
-        pq.push({dist[0][0], 0, 0});
+        pq.push({dist[0][0], {0, 0}});
         while (!pq.empty()) {
-            auto [time, x, y] = pq.top(); 
+            int time = pq.top().first;
+            auto [x, y] = pq.top().second;
             pq.pop();
 
             if (time > dist[x][y]) continue;
@@ -25,7 +26,7 @@ public:
                 int nTime = max(time, moveTime[nx][ny]) + 1;
                 if (nTime < dist[nx][ny]) {
                     dist[nx][ny] = nTime;
-                    pq.push({nTime, nx, ny});
+                    pq.push({nTime, {nx, ny}});
                 }
             }
         }

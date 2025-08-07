@@ -6,7 +6,6 @@ public:
         vector<vector<int>> dist(n, vector<int>(m, INT_MAX));
         priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<>> pq;
 
-        moveTime[0][0] = 0;
         dist[0][0] = 0;
         pq.push({dist[0][0], 0, 0});
         while (!pq.empty()) {
@@ -20,9 +19,13 @@ public:
             for (auto d : DIR) {
                 int nx = x + d[0];
                 int ny = y + d[1];
-                if (nx >= 0 && nx < n && ny >= 0 && ny < m && dist[nx][ny] > max(dist[x][y], moveTime[nx][ny]) + 1) {
-                    dist[nx][ny] = max(dist[x][y], moveTime[nx][ny]) + 1;
-                    pq.push({dist[nx][ny], nx, ny});
+
+                if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+
+                int nTime = max(time, moveTime[nx][ny]) + 1;
+                if (nTime < dist[nx][ny]) {
+                    dist[nx][ny] = nTime;
+                    pq.push({nTime, nx, ny});
                 }
             }
         }

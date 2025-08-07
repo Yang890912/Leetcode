@@ -18,7 +18,7 @@ public:
             if (x == n - 1 && y == m - 1) break;
 
             vector<vector<int>> DIR = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-            for (auto d : DIR) {
+            for (vector<int> d : DIR) {
                 int nx = x + d[0];
                 int ny = y + d[1];
 

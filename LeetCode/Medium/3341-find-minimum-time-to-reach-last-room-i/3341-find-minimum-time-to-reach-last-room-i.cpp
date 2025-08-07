@@ -10,7 +10,8 @@ public:
         pq.push({dist[0][0], {0, 0}});
         while (!pq.empty()) {
             int time = pq.top().first;
-            auto [x, y] = pq.top().second;
+            int x = pq.top().second.first;
+            int y = pq.top().second.second;
             pq.pop();
 
             if (time > dist[x][y]) continue;

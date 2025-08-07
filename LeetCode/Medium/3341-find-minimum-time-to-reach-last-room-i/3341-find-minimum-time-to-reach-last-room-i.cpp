@@ -20,8 +20,8 @@ public:
             for (auto d : DIR) {
                 int nx = x + d[0];
                 int ny = y + d[1];
-                if (nx >= 0 && nx < n && ny >= 0 && ny < m && dist[nx][ny] > dist[x][y] + moveTime[x][y] + 1) {
-                    dist[nx][ny] = dist[x][y] + moveTime[x][y] + 1;
+                if (nx >= 0 && nx < n && ny >= 0 && ny < m && dist[nx][ny] > max(dist[x][y], moveTime[nx][ny]) + 1) {
+                    dist[nx][ny] = max(dist[x][y], moveTime[nx][ny]) + 1;
                     pq.push({dist[nx][ny], nx, ny});
                 }
             }

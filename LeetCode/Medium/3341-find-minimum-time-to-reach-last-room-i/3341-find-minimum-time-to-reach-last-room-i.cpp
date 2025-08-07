@@ -5,7 +5,8 @@ public:
         int m = moveTime[0].size();
         vector<vector<int>> dist(n, vector<int>(m, INT_MAX));
         priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater<>> pq;
-
+        vector<vector<int>> DIR = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        
         dist[0][0] = 0;
         pq.push({dist[0][0], {0, 0}});
         while (!pq.empty()) {
@@ -17,7 +18,6 @@ public:
             if (time > dist[x][y]) continue;
             if (x == n - 1 && y == m - 1) return dist[n - 1][m - 1];
 
-            vector<vector<int>> DIR = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
             for (vector<int> d : DIR) {
                 int nx = x + d[0];
                 int ny = y + d[1];

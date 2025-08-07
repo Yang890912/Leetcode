@@ -15,7 +15,7 @@ public:
             pq.pop();
 
             if (time > dist[x][y]) continue;
-            if (x == n - 1 && y == m - 1) continue;
+            if (x == n - 1 && y == m - 1) break;
 
             vector<vector<int>> DIR = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
             for (auto d : DIR) {

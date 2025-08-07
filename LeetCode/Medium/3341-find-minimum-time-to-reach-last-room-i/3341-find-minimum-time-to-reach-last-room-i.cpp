@@ -19,8 +19,8 @@ public:
             if (x == n - 1 && y == m - 1) return dist[n - 1][m - 1];
 
             for (int i = 0; i < 4; i++) {
-                int nx = x + d[i][0];
-                int ny = y + d[i][1];
+                int nx = x + DIR[i][0];
+                int ny = y + DIR[i][1];
 
                 if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
 

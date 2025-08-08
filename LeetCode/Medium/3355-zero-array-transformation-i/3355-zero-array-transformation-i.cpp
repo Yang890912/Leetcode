@@ -3,7 +3,7 @@ public:
     bool isZeroArray(vector<int>& nums, vector<vector<int>>& queries) {
         vector<int> prefixSum(nums.size(), 0);
 
-        for (auto query : queries) {
+        for (const auto& query : queries) {
             prefixSum[query[0]]++;
             if (query[1] + 1 < nums.size()) prefixSum[query[1] + 1]--;
         }

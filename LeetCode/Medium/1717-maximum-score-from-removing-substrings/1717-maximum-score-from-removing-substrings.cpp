@@ -16,16 +16,17 @@ public:
     }
 
     string calGain(string s, int& gain, int canGain, string pattern) {
-        string news = "";
+        string newS = "";
+
         for (int i = 0; i < s.size(); i++) {
-            if (news == "") news += s[i];
-            else if (s[i] == pattern[1] && news.back() == pattern[0]) {
+            if (newS == "") newS += s[i];
+            else if (s[i] == pattern[1] && newS.back() == pattern[0]) {
                 gain += canGain;
-                news.pop_back();
+                newS.pop_back();
             }
-            else news += s[i];
+            else newS += s[i];
         }
 
-        return news;
+        return newS;
     }
 };

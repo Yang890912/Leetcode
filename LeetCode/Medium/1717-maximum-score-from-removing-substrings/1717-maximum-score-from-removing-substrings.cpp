@@ -15,7 +15,7 @@ public:
         return gain;
     }
 
-    string calGain(string s, int& gain, int canGain, string pattern) {
+    string calGain(const string s, int& gain, int canGain, const string pattern) {
         string newS = "";
 
         for (int i = 0; i < s.size(); i++) {

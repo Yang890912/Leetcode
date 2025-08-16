@@ -8,7 +8,7 @@ public:
             if (s[0] == '0') continue;
             bitset<32> b(stoi(s));
             if (b.count() == 1) return true;
-        } while(next_permutation(s.begin(), s.end()));
+        } while (next_permutation(s.begin(), s.end()));
 
         return false;
     }

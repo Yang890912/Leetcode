@@ -2,7 +2,6 @@ class Solution {
 public:
     int maxFreeTime(int eventTime, int k, vector<int>& startTime, vector<int>& endTime) {
         int n = startTime.size();
-
         vector<int> gaps;
         for (int i = 0; i < n; i++) {
             if (i == 0) gaps.push_back(startTime[i]);
@@ -13,11 +12,11 @@ public:
         }
 
         int maxFree = 0;
-        int freeTime = 0;
+        int currFree = 0;
         for (int i = 0; i < gaps.size(); i++) {
-            if (i < k + 1) freeTime += gaps[i];
-            else freeTime += gaps[i] - gaps[i - k - 1];
-            maxFree = max(maxFree, freeTime);
+            if (i < k + 1) currFree += gaps[i];
+            else currFree += gaps[i] - gaps[i - k - 1];
+            maxFree = max(maxFree, currFree);
         }
 
         return maxFree;

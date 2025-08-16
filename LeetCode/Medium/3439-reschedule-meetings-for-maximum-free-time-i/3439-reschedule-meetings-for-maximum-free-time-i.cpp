@@ -7,7 +7,7 @@ public:
             if (i == 0) gaps.push_back(startTime[i]);
             else gaps.push_back(startTime[i] - endTime[i - 1]);
 
-            if (i == n - 1 && endTime[i] < eventTime)
+            if (i == n - 1)
                 gaps.push_back(eventTime - endTime[i]);
         }
 

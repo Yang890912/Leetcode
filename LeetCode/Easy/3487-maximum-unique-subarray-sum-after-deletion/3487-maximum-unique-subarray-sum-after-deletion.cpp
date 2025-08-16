@@ -1,25 +1,15 @@
 class Solution {
 public:
     int maxSum(vector<int>& nums) {
-        int res = INT_MIN;
+        sort(nums.rbegin(), nums.rend());
 
-        int currSum = 0;
-        unordered_map<int, int> um;
-        for (int i = 0; i < nums.size(); i++) {
-            if (i == 0) {
-                currSum = nums[i];
-                um[nums[i]] = 1;
-            }
-            else if (um.count(nums[i]) > 0) continue;
-            else {
-                if (currSum >= 0 && nums[i] >= 0) currSum += nums[i];
-                else if (currSum < 0) {
-                    um.clear();
-                    currSum = nums[i];
-                }
-                um[nums[i]] = 1;
-            }
-            res = max(res, currSum);
+        int res = nums[0];
+        if (res <= 0) return res;
+
+        for (int i = 1; i < nums.size(); i++) {
+            if (nums[i] < 0) break;
+            if (nums[i] == nums[i - 1]) continue;
+            res += nums[i];
         }
 
         return res;

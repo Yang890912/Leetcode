@@ -22,7 +22,10 @@ public:
         if (idx == word.size()) 
             return true;
 
-        if (i < 0 || i >= board.size() || j < 0 || j >= board[0].size() || board[i][j] != word[idx] || visited[i][j] == 1) 
+        if (i < 0 || i >= board.size() || 
+            j < 0 || j >= board[0].size() ||
+            board[i][j] != word[idx] || 
+            visited[i][j] == 1) 
             return false;
 
         visited[i][j] = 1;

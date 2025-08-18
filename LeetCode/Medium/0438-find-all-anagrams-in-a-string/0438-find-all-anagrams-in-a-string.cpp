@@ -10,17 +10,16 @@ public:
             if (inp[s[right]] == 0) {
                 inp[s[left]]++;
                 left++;
+                if (left == right) right = left;
                 continue;
             }
 
             inp[s[right]]--;
-
             if (right - left == p.size() - 1) {
                 res.push_back(left);
                 inp[s[left]]++;
                 left++;
             }
-            
             right++;
         }
 

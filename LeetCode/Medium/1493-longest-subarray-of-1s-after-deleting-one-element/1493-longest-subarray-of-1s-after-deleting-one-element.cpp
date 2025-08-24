@@ -2,11 +2,13 @@ class Solution {
 public:
     int longestSubarray(vector<int>& nums) {
         int longest = 0;
+        bool containZero = false;
         int prevLength = 0;
         int count = 0;
         for (int i = 0; i < nums.size(); i++) {
             if (nums[i] == 1) count++;
             else {
+                containZero = true;
                 if (count == 0) prevLength = 0;
                 else {
                     longest = max(longest, count + prevLength);
@@ -16,7 +18,9 @@ public:
             }
         }
 
-        longest = max(longest, count - 1);
+        if (containZero) longest = max(longest, count);
+        else longest = max(longest, count - 1);
+
         if (prevLength > 0 && count > 0) 
             longest = max(longest, count + prevLength);
 

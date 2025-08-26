@@ -4,8 +4,7 @@ public:
         vector<vector<double>> diagAndArea(dimensions.size());
         
         for (int i = 0; i < dimensions.size(); i++) {
-            diagAndArea[i].push_back(sqrt(dimensions[i][0] * dimensions[i][0] + 
-                                        dimensions[i][1] * dimensions[i][1]));
+            diagAndArea[i].push_back(sqrt(dimensions[i][0] * dimensions[i][0] + dimensions[i][1] * dimensions[i][1]));
             diagAndArea[i].push_back(dimensions[i][0] * dimensions[i][1]);
         }
 

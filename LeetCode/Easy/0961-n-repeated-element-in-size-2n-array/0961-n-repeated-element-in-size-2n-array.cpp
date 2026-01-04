@@ -2,10 +2,11 @@ class Solution {
 public:
     int repeatedNTimes(vector<int>& nums) {
         int n = nums.size();
-        sort(nums.begin(), nums.end());
 
-        if (nums[0] == nums[n / 2 - 1]) return nums[0];
+        for (int i = 0; i < n - 2; i++) {
+            if (nums[i] == nums[i + 1] || nums[i] == nums[i + 2]) return nums[i];
+        }
 
-        return nums[n / 2];
+        return nums[n - 1];
     }
 };

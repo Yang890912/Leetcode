@@ -7,7 +7,7 @@ public:
         int res = 0;
         for (int i = 0; i < m - 2; i++) {
             for (int j = 0; j < n - 2; j++) {
-                
+
                 unordered_set<int> st;
                 for (int ii = 0; ii < 3; ii++) {
                     for (int jj = 0; jj < 3; jj++) {
@@ -19,15 +19,15 @@ public:
                 if (st.size() < 9) continue;
 
                 if (grid[i][j] + grid[i + 1][j] + grid[i + 2][j] != 15) continue;
-                if (grid[i][j + 1] + grid[i + 1][j + 1] + grid[i + 2][j + 1] != 15) continue;
-                if (grid[i][j + 2] + grid[i + 1][j + 2] + grid[i + 2][j + 2] != 15) continue;
+                else if (grid[i][j + 1] + grid[i + 1][j + 1] + grid[i + 2][j + 1] != 15) continue;
+                else if (grid[i][j + 2] + grid[i + 1][j + 2] + grid[i + 2][j + 2] != 15) continue;
 
                 if (grid[i][j] + grid[i + 1][j + 1] + grid[i + 2][j + 2] != 15) continue;
-                if (grid[i][j + 2] + grid[i + 1][j + 1] + grid[i + 2][j] != 15) continue;
+                else if (grid[i][j + 2] + grid[i + 1][j + 1] + grid[i + 2][j] != 15) continue;
 
                 if (grid[i][j] + grid[i][j + 1] + grid[i][j + 2] != 15) continue;
-                if (grid[i + 1][j] + grid[i + 1][j + 1] + grid[i + 1][j + 2] != 15) continue;
-                if (grid[i + 2][j] + grid[i + 2][j + 1] + grid[i + 2][j + 2] != 15) continue;
+                else if (grid[i + 1][j] + grid[i + 1][j + 1] + grid[i + 1][j + 2] != 15) continue;
+                else if (grid[i + 2][j] + grid[i + 2][j + 1] + grid[i + 2][j + 2] != 15) continue;
 
                 res++;
             }

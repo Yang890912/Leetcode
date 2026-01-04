@@ -7,6 +7,7 @@ public:
         int res = 0;
         for (int i = 0; i < m - 2; i++) {
             for (int j = 0; j < n - 2; j++) {
+                
                 unordered_set<int> st;
                 for (int ii = 0; ii < 3; ii++) {
                     for (int jj = 0; jj < 3; jj++) {

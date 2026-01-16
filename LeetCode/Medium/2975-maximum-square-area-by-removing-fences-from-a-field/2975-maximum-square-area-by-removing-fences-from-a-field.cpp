@@ -24,7 +24,6 @@ public:
         sort(hDiffs.begin(), hDiffs.end());
         sort(vDiffs.begin(), vDiffs.end());
 
-        const int MOD = 1e9 + 7;
         long long res = -1;
         int i = 0;
         int j = 0;
@@ -39,6 +38,6 @@ public:
             else if (hDiffs[i] > vDiffs[j]) j++;
         }
 
-        return res % MOD;
+        return res % ((int)1e9 + 7);
     }
 };

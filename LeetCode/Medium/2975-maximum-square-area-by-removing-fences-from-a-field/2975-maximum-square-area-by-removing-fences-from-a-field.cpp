@@ -7,26 +7,36 @@ public:
         vFences.push_back(n);
         sort(hFences.begin(), hFences.end());
         sort(vFences.begin(), vFences.end());
+        vector<int> hDiffs, vDiffs;
 
-        unordered_set<int> hDiffs, vDiffs;
         for (int i = 0; i < hFences.size(); i++) {
             for (int j = i + 1; j < hFences.size(); j++) {
-                hDiffs.insert(hFences[j] - hFences[i]);
+                hDiffs.push_back(hFences[j] - hFences[i]);
             }
         }
 
         for (int i = 0; i < vFences.size(); i++) {
             for (int j = i + 1; j < vFences.size(); j++) {
-                vDiffs.insert(vFences[j] - vFences[i]);
+                vDiffs.push_back(vFences[j] - vFences[i]);
             }
         }
 
+        sort(hDiffs.begin(), hDiffs.end());
+        sort(vDiffs.begin(), vDiffs.end());
+
         const int MOD = 1e9 + 7;
         long long res = -1;
-        for (int vd : vDiffs) {
-            if (hDiffs.count(vd)) {
-                res = max((long long)vd * vd, res);
+        int i = 0;
+        int j = 0;
+
+        while (i < hDiffs.size() && j < vDiffs.size()) {
+            if (hDiffs[i] == vDiffs[j]) {
+                res = max((long long)hDiffs[i] * hDiffs[i], res);
+                i++;
+                j++;
             }
+            else if (hDiffs[i] < vDiffs[j]) i++;
+            else if (hDiffs[i] > vDiffs[j]) j++;
         }
 
         return res % MOD;

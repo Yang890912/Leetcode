@@ -11,14 +11,10 @@ public:
 
                 if (a2 >= c1 || b2 >= d1 || a1 >= c2 || b1 >= d2) continue;
                 
-                vector<int> x = {a1, c1, a2, c2};
-                vector<int> y = {b1, d1, b2, d2};
-                sort(x.begin(), x.end());
-                sort(y.begin(), y.end());
-
-                long long l = x[2] - x[1];
-                long long w = y[2] - y[1];
-                res = max(res, min(w, l));
+                long long l = min(c1, c2) - max(a1, a2);
+                long long w = min(d1, d2) - max(b1, b2);
+                if (min(l, w) < res) continue;
+                res = min(l, w);
             }
         }
 

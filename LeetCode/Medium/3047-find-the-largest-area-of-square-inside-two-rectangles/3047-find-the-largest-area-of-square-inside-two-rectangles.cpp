@@ -18,10 +18,10 @@ public:
 
                 long long l = x[2] - x[1];
                 long long w = y[2] - y[1];
-                res = max(res, min(w, l) * min(w, l));
+                res = max(res, min(w, l));
             }
         }
 
-        return res;
+        return res * res;
     }
 };

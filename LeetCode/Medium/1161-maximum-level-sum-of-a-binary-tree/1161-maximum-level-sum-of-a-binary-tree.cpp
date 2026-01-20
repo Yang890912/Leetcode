@@ -12,13 +12,13 @@
 class Solution {
 public:
     int maxLevelSum(TreeNode* root) {
-        map<int, int> levelToSum;
-        
+        unordered_map<int, int> levelToSum;
+
         traverseTree(1, root, levelToSum);
 
         int res = 0;
         int currMax = INT_MIN;
-        for (auto pair : levelToSum) {
+        for (auto& pair : levelToSum) {
             if (pair.second > currMax) {
                 res = pair.first;
                 currMax = pair.second;
@@ -28,7 +28,7 @@ public:
         return res;
     }
 
-    void traverseTree(int level, TreeNode* node, map<int, int>& levelToSum) {
+    void traverseTree(int level, TreeNode* node, unordered_map<int, int>& levelToSum) {
         if (!node) return;
 
         levelToSum[level] += node->val;

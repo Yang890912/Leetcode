@@ -13,6 +13,7 @@ class Solution {
 public:
     int maxLevelSum(TreeNode* root) {
         map<int, int> levelToSum;
+        
         traverseTree(1, root, levelToSum);
 
         int res = 0;

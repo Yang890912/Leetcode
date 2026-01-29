@@ -9,9 +9,7 @@ public:
         vector<vector<bool>> found(m, vector<bool>(m, false));
 
         for (int i = 0; i < n; i++) {
-            if (cost[i] < adj[original[i]][changed[i]]) {
-                adj[original[i]][changed[i]] = cost[i];
-            } 
+            adj[original[i]][changed[i]] = min(cost[i], (long long)adj[original[i]][changed[i]]);
         }
 
         long long res = 0;

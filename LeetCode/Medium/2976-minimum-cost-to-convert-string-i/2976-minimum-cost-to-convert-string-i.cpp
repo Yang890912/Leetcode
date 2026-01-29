@@ -1,11 +1,13 @@
 class Solution {
 public:
     const int m = 'a' + 26;
+    const long long LLMAX = 1e12;
 
     long long minimumCost(string source, string target, vector<char>& original, vector<char>& changed, vector<int>& cost) {
         int n = original.size();
-        vector<vector<long long>> adj(m, vector<long long>(m, 1e12));
-        vector<vector<long long>> dis(m, vector<long long>(m, 1e12));
+
+        vector<vector<long long>> adj(m, vector<long long>(m, LLMAX));
+        vector<vector<long long>> dis(m, vector<long long>(m, LLMAX));
         vector<vector<bool>> found(m, vector<bool>(m, false));
 
         for (int i = 0; i < n; i++) {
@@ -16,14 +18,15 @@ public:
         for (int i = 0; i < source.size(); i++) {
             int src = source[i];
             int dst = target[i];
+
             if (src == dst) continue;
             else if (found[src][dst]) {
-                if (dis[src][dst] == (long long)1e12) return -1;
+                if (dis[src][dst] == LLMAX) return -1;
                 res += dis[src][dst];
             }
             else {
                 findShortestPath(src, dst, adj, dis, found);
-                if (dis[src][dst] == (long long)1e12) return -1;
+                if (dis[src][dst] == LLMAX) return -1;
                 res += dis[src][dst];
             }
         }
@@ -40,8 +43,9 @@ public:
 
         dis[src][src] = 0;
         for (int i = 'a'; i <= 'z'; i++) {
-            long long currMin = 1e12;
+            long long currMin = LLMAX;
             int picked = -1;
+            
             for (int j = 'a'; j <= 'z'; j++) {
                 if (used[j]) continue;
 

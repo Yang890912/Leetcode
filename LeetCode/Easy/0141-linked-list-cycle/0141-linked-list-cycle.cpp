@@ -7,15 +7,13 @@
  * };
  */
 class Solution {
+    unordered_set<ListNode*> st;
+
 public:
     bool hasCycle(ListNode *head) {
-        int n = 10001;
-
-        while (n--) {
-            if (!head) return false;
-            head = head->next;
-        }
-
-        return true;
+        if (!head) return false;
+        else if (st.count(head)) return true;
+        else if (!st.count(head)) st.insert(head);
+        return hasCycle(head->next);
     }
 };

@@ -2,28 +2,25 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> res;
-        vector<pair<int, int>> myNums;
-
-        for (int i = 0; i < nums.size(); i++) {
-            myNums.push_back(make_pair(nums[i], i));
-        }
+        unordered_map<int, stack<int>> val2Pos;
         
-        sort(myNums.begin(), myNums.end());
+        for (int i = 0; i < nums.size(); i++) val2Pos[nums[i]].push(i);
 
-        int left = 0;
-        int right = nums.size() - 1;
-        while (true) {
-            if (left == right) break;
+        sort(nums.begin(), nums.end());
 
-            if (myNums[left].first + myNums[right].first == target) {
-                res.push_back(myNums[left].second);
-                res.push_back(myNums[right].second);
+        int i = 0;
+        int j = nums.size() - 1;
+        while (i < j) {
+            if (nums[i] + nums[j] > target) j--;
+            else if (nums[i] + nums[j] < target) i++;
+            else {
+                res.push_back(val2Pos[nums[i]].top());
+                val2Pos[nums[i]].pop();
+                res.push_back(val2Pos[nums[j]].top());
                 break;
             }
-            else if (myNums[left].first + myNums[right].first > target) right--;
-            else left++;
         }
-
+        
         return res;
     }
 };

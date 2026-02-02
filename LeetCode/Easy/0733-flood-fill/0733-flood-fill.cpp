@@ -1,16 +1,28 @@
 class Solution {
 public:
-    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-        int originalColor = image[sr][sc];
-        image[sr][sc] = color;
-        
-        if (color == originalColor) return image;
+    const vector<vector<int>> DIR = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
-        if (sr - 1 >= 0 && image[sr - 1][sc] == originalColor) floodFill(image, sr - 1, sc, color);
-        if (sr + 1 < image.size() && image[sr + 1][sc] == originalColor) floodFill(image, sr + 1, sc, color);
-        if (sc - 1 >= 0 && image[sr][sc - 1] == originalColor) floodFill(image, sr, sc - 1, color);
-        if (sc + 1 < image[sr].size() && image[sr][sc + 1] == originalColor) floodFill(image, sr, sc + 1, color);
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        int m = image.size();
+        int n = image[0].size();
+        vector<vector<bool>> visited(m, vector<bool>(n, false));
+
+        dfs(m, n, image, visited, sr, sc, image[sr][sc], color);
 
         return image;
+    }
+
+    void dfs(int m, int n, vector<vector<int>>& image, vector<vector<bool>>& visited, int x, int y, int from, int to) {
+        visited[x][y] = true;
+        image[x][y] = to;
+  
+        for (int i = 0; i < DIR.size(); i++) {
+            int nx = x + DIR[i][0];
+            int ny = y + DIR[i][1];
+            if (nx < 0 || nx >= m || ny < 0 || ny >= n || image[nx][ny] != from || visited[nx][ny]) continue;
+            dfs(m, n, image, visited, nx, ny, from, to);
+        }
+
+        return;
     }
 };

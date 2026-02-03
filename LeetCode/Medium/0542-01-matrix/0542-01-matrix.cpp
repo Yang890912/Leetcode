@@ -3,7 +3,7 @@ public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         int m = mat.size();
         int n = mat[0].size();
-        const vector<vector<int>> DIR = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+        vector<vector<int>> DIR = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
 
         vector<vector<int>> distance(m, vector<int>(n, -1));
         vector<vector<bool>> visited(m, vector<bool>(n, false));

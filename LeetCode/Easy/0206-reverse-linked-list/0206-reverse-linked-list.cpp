@@ -19,7 +19,6 @@ public:
             cur = nxt;
             nxt = tmp;
         }
-
         return cur;
     }
 };

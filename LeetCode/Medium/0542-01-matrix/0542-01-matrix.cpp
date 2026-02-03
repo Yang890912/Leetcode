@@ -1,35 +1,49 @@
 class Solution {
+    const vector<vector<int>> DIR = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+
 public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
-        vector<pair<int, int>> DIR = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-        vector<vector<int>> dist(mat.size(), vector<int>(mat[0].size(), 100001));
-        queue<pair<int, int>> q;
+        int m = mat.size();
+        int n = mat[0].size();
+        vector<vector<int>> res(m, vector<int>(n, -1));
+        vector<vector<bool>> visited(m, vector<bool>(n, false));
 
-        for (int i = 0; i < mat.size(); i++) {
-            for (int j = 0; j < mat[i].size(); j++) {
-                if (mat[i][j] == 0) {
-                    dist[i][j] = 0;
-                    q.push({i, j});
+        queue<vector<int>> q;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (mat[i][j] != 0) continue;
+
+                res[i][j] = 0;
+                visited[i][j] = true;
+                for (const vector<int>& d : DIR) {
+                    int ni = i + d[0];
+                    int nj = j + d[1];
+                    if (ni < 0 || nj < 0 || ni >= m || nj >= n || visited[ni][nj] || mat[ni][nj] == 0) continue;
+
+                    res[ni][nj] = 1;
+                    visited[ni][nj] = true;
+                    q.push({ni, nj, 1});
                 }
             }
         }
 
         while (!q.empty()) {
-            int i = q.front().first;
-            int j = q.front().second;
+            int x = q.front()[0];
+            int y = q.front()[1];
+            int dist = q.front()[2];
             q.pop();
-            for (int d = 0; d < DIR.size(); d++) {
-                int ni = i + DIR[d].first;
-                int nj = j + DIR[d].second;
-                if (ni >= 0 && nj >= 0 && ni < mat.size() && nj < mat[0].size() && dist[ni][nj] > dist[i][j] + 1) {
-                    dist[ni][nj] = dist[i][j] + 1;
-                    q.push({ni, nj});
-                }
+
+            for (const vector<int>& d : DIR) {
+                int nx = x + d[0];
+                int ny = y + d[1];
+                if (nx < 0 || ny < 0 || nx >= m || ny >= n || visited[nx][ny] || mat[nx][ny] == 0) continue;
+
+                res[nx][ny] = dist + 1;
+                visited[nx][ny] = true;
+                q.push({nx, ny, res[nx][ny]});
             }
         }
 
-        return dist;
+        return res;
     }
-
-
 };

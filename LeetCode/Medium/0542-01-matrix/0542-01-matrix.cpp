@@ -6,7 +6,7 @@ public:
         int n = mat[0].size();
         vector<vector<int>> distance(m, vector<int>(n, -1));
         vector<vector<bool>> visited(m, vector<bool>(n, false));
-        
+
         queue<vector<int>> q;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -19,14 +19,12 @@ public:
         }
 
         while (!q.empty()) {
-            int x = q.front()[0];
-            int y = q.front()[1];
+            int x = q.front()[0], y = q.front()[1];
             int dist = q.front()[2];
             q.pop();
 
             for (const vector<int>& d : DIR) {
-                int nx = x + d[0];
-                int ny = y + d[1];
+                int nx = x + d[0], ny = y + d[1];
                 if (nx < 0 || ny < 0 || nx >= m || ny >= n || visited[nx][ny]) continue;
 
                 distance[nx][ny] = dist + 1;

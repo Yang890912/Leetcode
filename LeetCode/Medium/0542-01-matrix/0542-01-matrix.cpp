@@ -5,7 +5,7 @@ public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         int m = mat.size();
         int n = mat[0].size();
-        vector<vector<int>> res(m, vector<int>(n, -1));
+        vector<vector<int>> distance(m, vector<int>(n, -1));
         vector<vector<bool>> visited(m, vector<bool>(n, false));
 
         queue<vector<int>> q;
@@ -13,17 +13,9 @@ public:
             for (int j = 0; j < n; j++) {
                 if (mat[i][j] != 0) continue;
 
-                res[i][j] = 0;
+                distance[i][j] = 0;
                 visited[i][j] = true;
-                for (const vector<int>& d : DIR) {
-                    int ni = i + d[0];
-                    int nj = j + d[1];
-                    if (ni < 0 || nj < 0 || ni >= m || nj >= n || visited[ni][nj] || mat[ni][nj] == 0) continue;
-
-                    res[ni][nj] = 1;
-                    visited[ni][nj] = true;
-                    q.push({ni, nj, 1});
-                }
+                q.push({i, j, 0});
             }
         }
 
@@ -36,14 +28,14 @@ public:
             for (const vector<int>& d : DIR) {
                 int nx = x + d[0];
                 int ny = y + d[1];
-                if (nx < 0 || ny < 0 || nx >= m || ny >= n || visited[nx][ny] || mat[nx][ny] == 0) continue;
+                if (nx < 0 || ny < 0 || nx >= m || ny >= n || visited[nx][ny]) continue;
 
-                res[nx][ny] = dist + 1;
+                distance[nx][ny] = dist + 1;
                 visited[nx][ny] = true;
-                q.push({nx, ny, res[nx][ny]});
+                q.push({nx, ny, distance[nx][ny]});
             }
         }
 
-        return res;
+        return distance;
     }
 };

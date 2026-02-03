@@ -14,21 +14,18 @@ class Solution {
 
 public:
     int diameterOfBinaryTree(TreeNode* root) {
-        if (root == nullptr) return 0;
-
-        dfs(root);
-
+        maxDepth(root);
         return res;
     }
 
-    int dfs(TreeNode* root) {
-        if (root == nullptr) return 0;
+    int maxDepth(TreeNode* node) {
+        if (!node) return 0;
 
-        int left = dfs(root->left);
-        int right = dfs(root->right);
+        int l = maxDepth(node->left);
+        int r = maxDepth(node->right);
 
-        res = max(res, left + right);
+        res = max(res, (l + r));
 
-        return 1 + max(left, right);
+        return max(l, r) + 1;
     }
 };

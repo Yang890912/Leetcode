@@ -1,13 +1,12 @@
 class Solution {
-    const vector<vector<int>> DIR = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
-
 public:
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         int m = mat.size();
         int n = mat[0].size();
+        const vector<vector<int>> DIR = {{0, -1}, {0, 1}, {1, 0}, {-1, 0}};
+
         vector<vector<int>> distance(m, vector<int>(n, -1));
         vector<vector<bool>> visited(m, vector<bool>(n, false));
-
         queue<vector<int>> q;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {

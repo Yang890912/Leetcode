@@ -12,18 +12,20 @@
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>> traversal;
-        traceTree(root, 0, traversal);
-        return traversal;
+        vector<vector<int>> res;
+        preOrder(res, root, 0);
+        return res;
     }
 
-    void traceTree(TreeNode* root, int depth, vector<vector<int>>& traversal) {
-        if (root == nullptr) return;
+    void preOrder(vector<vector<int>>& res, TreeNode* node, int level) {
+        if (!node) return;
 
-        if (depth == 0 || depth > traversal.size() - 1) traversal.push_back({root->val});
-        else traversal[depth].push_back(root->val);
+        if (level >= res.size()) res.push_back({node->val});
+        else res[level].push_back(node->val);
 
-        traceTree(root->left, depth + 1, traversal);
-        traceTree(root->right, depth + 1, traversal);
+        preOrder(res, node->left, level + 1);
+        preOrder(res, node->right, level + 1);
+
+        return;
     }
 };

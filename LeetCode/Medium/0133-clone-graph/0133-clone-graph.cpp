@@ -20,38 +20,21 @@ public:
 */
 
 class Solution {
+    unordered_map<int, Node*> visited;
+
 public:
     Node* cloneGraph(Node* node) {
-        if (node == nullptr) return nullptr;
+        if (!node) return node;
 
-        queue<Node*> q, cq;
-        map<int, Node*> valMap2Node;
-        map<Node*, Node*> nodeMap;
+        if (visited.count(node->val)) return visited[node->val];
 
-        Node* cloneNode = new Node(node->val);
-        valMap2Node[node->val] = cloneNode;
-        nodeMap[node] = cloneNode;
-        q.push(node);
-
-        while (!q.empty()) {
-            Node* n = q.front();
-            Node* cn = nodeMap[n];
-            q.pop();
-
-            for (int i = 0; i < n->neighbors.size(); i++) {
-                if (valMap2Node.find(n->neighbors[i]->val) != valMap2Node.end()) {
-                    cn->neighbors.push_back(valMap2Node[n->neighbors[i]->val]);
-                }
-                else {
-                    Node* neighbor = new Node(n->neighbors[i]->val);
-                    cn->neighbors.push_back(neighbor);
-                    valMap2Node[n->neighbors[i]->val] = neighbor;
-                    nodeMap[n->neighbors[i]] = neighbor;
-                    q.push(n->neighbors[i]);
-                }
-            }
+        Node* nNode = new Node();
+        nNode->val = node->val;
+        visited[node->val] = nNode;
+        for (Node* nbor : node->neighbors) {
+            nNode->neighbors.push_back(cloneGraph(nbor));
         }
 
-        return cloneNode;
+        return nNode;
     }
 };

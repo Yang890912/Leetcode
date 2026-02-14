@@ -5,8 +5,7 @@ public:
 
         vector<double> dp(102, 0.0);
         dp[1] = (double)poured;
-        int i = 1;
-        while (i <= query_row) {
+        for(int i = 1; i <= query_row; i++) {
             vector<double> _dp(102, 0.0);
             for (int j = 1; j <= i + 1; j++) {
                 if (dp[j - 1] > 1.0) _dp[j] += 0.5 * (dp[j - 1] - 1.0);
@@ -15,7 +14,6 @@ public:
             dp = _dp;
 
             if (i == query_row) return min(dp[query_glass + 1], 1.0);
-            i++;
         }
 
         return 0.0;

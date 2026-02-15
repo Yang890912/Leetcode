@@ -2,35 +2,22 @@ class Solution {
 public:
     string addBinary(string a, string b) {
         string res;
-
-        int i = a.size() - 1;
-        int j = b.size() - 1;
+        int ai = a.size() - 1;
+        int bi = b.size() - 1;
         int carry = 0;
-        while (i >= 0 && j >= 0) {
-            int sum = (a[i] - '0') + (b[j] - '0') + carry;
-            if (sum % 2) res = '1' + res;
-            else res = '0' + res;
-            carry = sum / 2; 
-            i--;
-            j--;
+        while (ai >= 0 || bi >= 0) {
+            int sum = carry;
+            sum += (ai >= 0) ? a[ai--] - '0' : 0;
+            sum += (bi >= 0) ? b[bi--] - '0' : 0;
+
+            carry = sum / 2;
+            sum %= 2;
+            res.push_back('0' + sum);
         }
 
-        while (i >= 0) {
-            int sum = (a[i] - '0') + carry;
-            if (sum % 2) res = '1' + res;
-            else res = '0' + res;
-            carry = sum / 2; 
-            i--;
-        }
-        while (j >= 0) {
-            int sum = (b[j] - '0') + carry;
-            if (sum % 2) res = '1' + res;
-            else res = '0' + res;
-            carry = sum / 2; 
-            j--;
-        }
+        if (carry >= 1) res.push_back('1');
 
-        if (carry == 1) res = '1' + res;
+        reverse(res.begin(), res.end());
 
         return res;
     }

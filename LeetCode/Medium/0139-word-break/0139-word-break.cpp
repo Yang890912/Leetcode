@@ -1,30 +1,19 @@
 class Solution {
 public:
     bool wordBreak(string s, vector<string>& wordDict) {
-        vector<vector<int>> fromDict(s.size(), vector<int>(s.size(), 0));
-        unordered_set<string> wordDictUs(wordDict.begin(), wordDict.end());
+        int m = s.size();
+        int n = wordDict.size();
+        vector<bool> dp(m + 1, false);
+        dp[0] = true;
 
-        for (int i = 0; i < s.size(); i++) {
-            for (int j = i; j < s.size(); j++) {
-                if (wordDictUs.count(s.substr(i, j - i + 1)) == 1) fromDict[i][j] = 1;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                int start = i + 1 - wordDict[j].size();
+                if (start >= 0 && dp[start] && s.substr(start, wordDict[j].size()) == wordDict[j])
+                    dp[i + 1] = true; 
             }
         }
 
-        return recursive(0, s.size() - 1, fromDict);
-    }
-
-    bool recursive(int left, int right, vector<vector<int>>& fromDict) {
-        if (fromDict[left][right] == 1) return true;
-        else if (fromDict[left][right] == -1) return false;
-
-        for (int i = left; i < right; i++) {
-            if (recursive(left, i, fromDict) && recursive(i + 1, right, fromDict)) {
-                fromDict[left][right] = 1;
-                return true;
-            }
-        }
-        
-        fromDict[left][right] = -1;
-        return false;
+        return dp[m];
     }
 };

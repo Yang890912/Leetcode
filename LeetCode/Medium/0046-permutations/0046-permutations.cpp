@@ -1,32 +1,31 @@
 class Solution {
 public:
+    vector<vector<int>> res;
+
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<vector<int>> permutations;
-        vector<int> permutation;
-        vector<bool> visited(nums.size(), false);
+        int n = nums.size();
+        vector<bool> visited(n, false);
+        vector<int> curr;
 
-        dfs(nums, 0, visited, permutation, permutations);
+        dfs(n, nums, visited, curr);
 
-        return permutations;
+        return res;
     }
 
-    void dfs(vector<int>& nums, int level, vector<bool>& visited, vector<int>& permutation, vector<vector<int>>& permutations) {        
-        if (level >= nums.size()) {
-            permutations.push_back(permutation);
+    void dfs(int n, vector<int>& nums, vector<bool>& visited, vector<int>& curr) {
+        if (curr.size() == n) {
+            res.push_back(curr);
             return;
         }
- 
-        for (int i = 0; i < nums.size(); i++) {
+
+        for (int i = 0; i < n; i++) {
             if (visited[i]) continue;
-            else {
-                visited[i] = true;
-                permutation.push_back(nums[i]);
 
-                dfs(nums, level + 1, visited, permutation, permutations);
-
-                permutation.pop_back();
-                visited[i] = false;
-            }
+            curr.push_back(nums[i]);
+            visited[i] = true;
+            dfs(n, nums, visited, curr);
+            curr.pop_back();
+            visited[i] = false;
         }
     }
 };

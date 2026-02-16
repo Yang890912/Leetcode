@@ -1,33 +1,28 @@
 class Solution {
 public:
     int myAtoi(string s) {
-        long int num = 0;
-        bool isReading = false;
-        bool negative = false;
+        long long res = 0;
+        long long sign = 1;
 
         for (int i = 0; i < s.size(); i++) {
-            if (!isReading && s[i] == ' ')
-                continue;
-            else if (!isReading && (s[i] == '-' || s[i] == '+')) {
-                isReading = true;
-                if (s[i] == '-')
-                    negative = true;
-            } else if (s[i] >= '0' && s[i] <= '9') {
-                isReading = true;
-                num = num * 10 + s[i] - '0';
-                if (num > INT_MAX)
-                    break;
-            } else
-                break;
+            if (s[i] == ' ') continue;
+
+            if (s[i] == '-' || s[i] == '+') { 
+                sign = (s[i] == '-') ? -1 : 1; 
+                i++;
+            }
+
+            for (int j = i; j < s.size(); j++) {
+                if (s[j] >= '0' && s[j] <= '9') res = res * 10 + (s[j] - '0');
+                else break;
+
+                if (sign * res >= (long long)INT_MAX) return INT_MAX;
+                else if (sign * res <= (long long)INT_MIN) return INT_MIN;
+            }
+
+            break;
         }
 
-        if (negative && num > INT_MAX)
-            num = -1 * INT_MAX - 1;
-        else if (negative)
-            num = -1 * num;
-        else if (num > INT_MAX)
-            num = INT_MAX;
-
-        return num;
+        return sign * res;
     }
 };

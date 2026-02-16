@@ -1,30 +1,26 @@
 class Solution {
 public:
+    vector<vector<int>> res;
+
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
-        map<int, vector<vector<int>>> res;
- 
-        for (int t = 1; t <= target; t++) {
-            res[t] = {};
+        vector<int> curr;
+        backtrack(candidates, target, curr, 0);
+        return res;
+    }
+
+    void backtrack(vector<int>& candidates, int target, vector<int>& curr, int i) {
+        if (i >= candidates.size() || target < 0) return;
+
+        if (target == 0) {
+            res.push_back(curr);
+            return;
         }
 
-        for (int i = 0; i < candidates.size(); i++) {
-            res[candidates[i]].push_back({candidates[i]});
-        }
+        curr.push_back(candidates[i]);
+        backtrack(candidates, target - candidates[i], curr, i);
+        curr.pop_back();
+        backtrack(candidates, target, curr, i + 1);
 
-        for (int t = 1; t <= target; t++) {
-            for (int i = 0; i < candidates.size(); i++) {
-                if (candidates[i] >= t) continue;
-                for (vector<int> r : res[t - candidates[i]]) {
-                    if (r.back() <= candidates[i]) {
-                        vector<int> add = {candidates[i]};
-                        vector<int> combin(r);
-                        combin.insert(combin.end(), add.begin(), add.end());
-                        res[t].push_back(combin);
-                    }
-                }
-            }
-        }
-
-        return res[target];
+        return;
     }
 };

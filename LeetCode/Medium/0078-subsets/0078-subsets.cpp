@@ -4,12 +4,13 @@ public:
         int n = nums.size();
         vector<vector<int>> res;
         res.push_back({});
-        powerSet(nums, res, n, 0);
+        
+        backtrack(nums, res, n, 0);
 
         return res;
     }
 
-    void powerSet(vector<int>& nums, vector<vector<int>>& res, int n, int idx) {
+    void backtrack(vector<int>& nums, vector<vector<int>>& res, int n, int idx) {
         if (idx >= n) return;
 
         int size = res.size();
@@ -19,6 +20,6 @@ public:
             res.push_back(tmp);
         }
 
-        powerSet(nums, res, n, idx + 1);
+        backtrack(nums, res, n, idx + 1);
     }
 };

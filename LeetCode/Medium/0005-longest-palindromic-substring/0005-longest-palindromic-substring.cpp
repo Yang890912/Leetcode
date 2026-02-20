@@ -4,8 +4,7 @@ public:
         string res;
 
         for (int i = 0; i < s.size(); i++) {
-            int len = 1;
-            len = max(len, palindrome(s, i, i));
+            int len = max(len, palindrome(s, i, i));
             if (i + 1 < s.size() && s[i] == s[i + 1]) 
                 len = max(len, palindrome(s, i, i + 1));
 

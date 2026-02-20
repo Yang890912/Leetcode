@@ -1,18 +1,24 @@
 class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
+        int n = nums.size();
         vector<vector<int>> res;
-        vector<int> subset;
-        backtracking(nums, subset, res, 0);
+        res.push_back({});
+        powerSet(nums, res, n, 0);
+
         return res;
     }
 
-    void backtracking(vector<int>& nums, vector<int>& subset, vector<vector<int>>& res, int start) {
-        res.push_back(subset);
-        for (int i = start; i < nums.size(); i++) {
-            subset.push_back(nums[i]);
-            backtracking(nums, subset, res, i + 1);
-            subset.pop_back();
+    void powerSet(vector<int>& nums, vector<vector<int>>& res, int n, int idx) {
+        if (idx >= n) return;
+
+        int size = res.size();
+        for (int i = 0; i < size; i++) {
+            vector<int> tmp = res[i];
+            tmp.push_back(nums[idx]);
+            res.push_back(tmp);
         }
+
+        powerSet(nums, res, n, idx + 1);
     }
 };

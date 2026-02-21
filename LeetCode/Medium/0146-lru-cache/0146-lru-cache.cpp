@@ -49,10 +49,9 @@ public:
     
     int get(int key) {
         if (!table[key]) return -1;
-
+        // update used state
         remove(table[key]);
         add(table[key]);
-    
         return table[key]->val;
     }
     

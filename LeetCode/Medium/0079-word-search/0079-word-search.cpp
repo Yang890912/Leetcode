@@ -1,10 +1,11 @@
 class Solution {
 public:
     const vector<vector<int>> DIR = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+    int m, n;
 
     bool exist(vector<vector<char>>& board, string word) {
-        int m = board.size();
-        int n = board[0].size();
+        m = board.size();
+        n = board[0].size();
 
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
@@ -27,7 +28,7 @@ public:
             int nx = x + d[0];
             int ny = y + d[1];
 
-            if (nx < 0 || ny < 0 || nx >= board.size() || ny >= board[0].size() 
+            if (nx < 0 || ny < 0 || nx >= m || ny >= n 
             || visited[nx][ny] || board[nx][ny] != word[pos + 1]) continue;
 
             if (dfs(board, nx, ny, visited, word, pos + 1)) return true;

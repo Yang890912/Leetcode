@@ -52,7 +52,7 @@ public:
 
         remove(table[key]);
         add(table[key]);
-        
+    
         return table[key]->val;
     }
     

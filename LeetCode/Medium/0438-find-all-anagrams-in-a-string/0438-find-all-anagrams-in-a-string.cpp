@@ -1,26 +1,24 @@
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
+        const int sLen = s.size();
+        const int pLen = p.size();
         vector<int> res;
-        vector<int> inp('z' + 1, 0);
-        for (char c : p) inp[c]++;
+        vector<int> freq(26, 0);
 
-        int left = 0, right = 0;
-        while (left < s.size() && right < s.size()) {
-            if (inp[s[right]] == 0) {
-                inp[s[left]]++;
-                left++;
-                if (left == right) right = left;
-                continue;
+        for (char c : p) freq[c - 'a']++; 
+
+        int l = 0, r = 0;
+        while (l < sLen) {
+            while (r < sLen && freq[s[r] - 'a']) {
+                freq[s[r] - 'a']--;
+                r++;
             }
 
-            inp[s[right]]--;
-            if (right - left == p.size() - 1) {
-                res.push_back(left);
-                inp[s[left]]++;
-                left++;
-            }
-            right++;
+            if (r - l == pLen) res.push_back(l);
+
+            freq[s[l] - 'a']++;
+            l++;
         }
 
         return res;

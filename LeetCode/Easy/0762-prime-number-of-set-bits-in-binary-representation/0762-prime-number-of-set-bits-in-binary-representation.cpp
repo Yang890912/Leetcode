@@ -5,7 +5,7 @@ public:
         int res = 0;
 
         for (int i = left; i <= right; i++) {
-            if (primes.count(bitCounts(i))) res++;
+            if (primes.count(__builtin_popcount(i))) res++;
         }
 
         return res;

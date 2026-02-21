@@ -37,7 +37,7 @@ public:
 
     int capa;
     int size;
-    vector<Node*> table{1001, nullptr};
+    vector<Node*> table{10001, nullptr};
 
     LRUCache(int capacity) {
         size = 0;

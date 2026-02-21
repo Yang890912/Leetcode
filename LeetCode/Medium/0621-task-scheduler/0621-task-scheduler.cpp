@@ -3,7 +3,7 @@ public:
     int leastInterval(vector<char>& tasks, int n) {
         vector<int> freq(26, 0);
 
-        for (char t : tasks) freq[t - 'A']++;
+        for (char& t : tasks) freq[t - 'A']++;
 
         sort(freq.rbegin(), freq.rend());
 

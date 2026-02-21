@@ -2,26 +2,17 @@ class Solution {
 public:
     int leastInterval(vector<char>& tasks, int n) {
         vector<int> freq(26, 0);
-        int taskWithMax = 0;
-        int maxFreq = 0;
 
-        for (char t : tasks) {
-            int key = t - 'A';
-            freq[key]++;
-             
-            if (maxFreq == freq[key]) {
-                taskWithMax++;
-            }
-            else if (maxFreq < freq[key]) {
-                taskWithMax = 1;
-                maxFreq = freq[key];
-            }
+        for (char t : tasks) freq[t - 'A']++;
+
+        sort(freq.rbegin(), freq.rend());
+
+        int hole = freq[0] - 1;
+        int idle = hole * n;
+        for (int i = 1; i < 26; i++) {
+            idle -= min(hole, freq[i]); // 分散撒在洞
         }
-
-        int idle = (maxFreq - 1) * max(0, n - taskWithMax + 1);
-        idle -= tasks.size() - maxFreq * taskWithMax;
-        idle = max(0, idle);
         
-        return tasks.size() + idle;
+        return tasks.size() + max(idle, 0);
     }
 };

@@ -2,47 +2,45 @@ class Solution {
 public:
     vector<string> letterCombinations(string digits) {
         vector<string> res;
-        if (digits == "") return res;
+        vector<vector<char>> table(10);
 
-        vector<vector<char>> map('9' + 1);
-        char curr = '2';
-        int i = 0;
+        // construct table
+        int dig = 2; 
+        int cnt = 0;
         for (char c = 'a'; c <= 'z'; c++) {
-            map[curr].push_back(c);
-            i++;
-            if (i == 4 && (curr == '7' || curr == '9')) curr++, i = 0;
-            if (i == 3 && (curr != '7' && curr != '9')) curr++, i = 0;
+            table[dig].push_back(c);
+            cnt++;
+            if (dig != 7 && dig != 9 && cnt == 3) dig++, cnt = 0;
+            else if (cnt == 4) dig++, cnt = 0;
         }
 
-        construct(res, map, digits, 0);
+        build(res, table, digits, 0);
 
         return res;
     }
 
-    void construct(vector<string>& res, 
-                    const vector<vector<char>> map, 
-                    const string digits, 
-                    int idx) {
-                        
-        if (idx == digits.size() - 1) {
-            for (char c : map[digits[idx]]) {
-                string ss = "";
-                ss += c;
-                res.push_back(ss);
+    void build(vector<string>& res, vector<vector<char>>& table, string& digits, int pos) {
+        if (pos == digits.size()) return;
+
+        int dig = digits[pos] - '0';
+        int size = res.size();
+        int lsize = table[dig].size();
+        if (size == 0) {
+            for (int j = 0; j < lsize; j++) {
+                res.push_back(string() + table[dig][j]);
             }
-            return;
+        }
+        else {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < lsize; j++) {
+                    res.push_back(res[i] + table[dig][j]);
+                }
+            }
         }
 
-        construct(res, map, digits, idx + 1);
-        vector<string> tmp;
-        for (char c : map[digits[idx]]) {
-            for (string s : res) {
-                string ss = "";
-                ss += c + s;
-                tmp.push_back(ss);
-            }
-        }
-        res = tmp;
+        res.erase(res.begin(), res.begin() + size);
+
+        build(res, table, digits, pos + 1);
 
         return;
     }

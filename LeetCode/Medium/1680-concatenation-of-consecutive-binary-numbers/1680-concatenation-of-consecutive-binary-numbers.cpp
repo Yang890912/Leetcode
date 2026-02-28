@@ -9,7 +9,7 @@ public:
                 num >>= 1;
                 res = (res << 1) % MOD;
             }
-            // res = (res + i) % MOD;
+            res = (res + i) % MOD;
         }
 
         return res;

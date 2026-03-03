@@ -4,7 +4,7 @@ public:
         int n = temperatures.size();
         vector<int> res(n, 0);
         stack<int> st;
-
+        
         for (int i = 0; i < n; i++) {
             while (!st.empty() && temperatures[i] > temperatures[st.top()]) {
                 res[st.top()] = i - st.top();

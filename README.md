@@ -9,6 +9,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 ## Array
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0739-daily-temperatures](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0739-daily-temperatures/) | Medium |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 ## Greedy
 | Problem Name | Difficulty |
@@ -30,4 +31,12 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1545-find-kth-bit-in-nth-binary-string/) | Medium |
+## Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0739-daily-temperatures](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0739-daily-temperatures/) | Medium |
+## Monotonic Stack
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0739-daily-temperatures](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0739-daily-temperatures/) | Medium |
 <!---LeetCode Topics End-->

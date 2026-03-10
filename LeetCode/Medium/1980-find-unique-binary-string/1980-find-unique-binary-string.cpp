@@ -2,30 +2,20 @@ class Solution {
 public:
     string findDifferentBinaryString(vector<string>& nums) {
         sort(nums.begin(), nums.end());
-        int left = 0;
-        int right = nums.size() - 1;
-        int onesMask = (1 << nums.size()) - 1;
-        int count = 0;
-
-        while (left <= right) {
-            int lNum = stoi(nums[left], nullptr, 2);
-            int rNum = stoi(nums[right], nullptr, 2);
-
-            if (rNum != onesMask - count) {
-                bitset<16> binary(onesMask - count);
-                return binary.to_string().substr(16 - nums.size());
-            }
-            else if (lNum != count) {
-                bitset<16> binary(count);
-                return binary.to_string().substr(16 - nums.size());
-            }
-
-            left++;
-            right--;
-            count++;
-        }
+        int n = nums.size();
+        int len = nums[0].size();
+        int upper = (1 << len);
         
-        bitset<16> binary(onesMask - count);
-        return binary.to_string().substr(16 - nums.size());
+        string s;
+        int i = 0, j = 0;
+        for (; i < upper && j < n; i++, j++) {
+            int num = stoi(nums[j], nullptr, 2);
+            if (i == num) continue;
+            s = bitset<32>(i).to_string();
+            return s.substr(32 - len);
+        }
+
+        s = bitset<32>(i).to_string();
+        return s.substr(32 - len);
     }
 };

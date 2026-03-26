@@ -18,11 +18,11 @@ public:
 
         for (int i = 0; i < m; i++) {
             if (total == prefixSum[i][n - 1] * 2) return true;
-            if (total < prefixSum[i][n - 1] * 2) break;
+            else if (total < prefixSum[i][n - 1] * 2) break;
         }
         for (int j = 0; j < n; j++) {
             if (total == prefixSum[m - 1][j] * 2) return true;
-            if (total < prefixSum[m - 1][j] * 2) break;
+            else if (total < prefixSum[m - 1][j] * 2) break;
         }
 
         return false;

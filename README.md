@@ -48,6 +48,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
 | [1784-check-if-binary-string-has-at-most-one-segment-of-ones](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1784-check-if-binary-string-has-at-most-one-segment-of-ones/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1980-find-unique-binary-string/) | Medium |
+| [2839-check-if-strings-can-be-made-equal-with-operations-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2839-check-if-strings-can-be-made-equal-with-operations-i/) | Easy |
 ## Recursion
 | Problem Name | Difficulty |
 | ------- | ------- |

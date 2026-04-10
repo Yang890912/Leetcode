@@ -26,6 +26,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3546-equal-sum-grid-partition-i/) | Medium |
 | [3653-xor-after-range-multiplication-queries-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3653-xor-after-range-multiplication-queries-i/) | Medium |
+| [3740-minimum-distance-between-three-equal-elements-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/3740-minimum-distance-between-three-equal-elements-i/) | Easy |
 ## Greedy
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -87,6 +88,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [0874-walking-robot-simulation](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0874-walking-robot-simulation/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1980-find-unique-binary-string/) | Medium |
 | [2840-check-if-strings-can-be-made-equal-with-operations-ii](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2840-check-if-strings-can-be-made-equal-with-operations-ii/) | Medium |
+| [3740-minimum-distance-between-three-equal-elements-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/3740-minimum-distance-between-three-equal-elements-i/) | Easy |
 ## Backtracking
 | Problem Name | Difficulty |
 | ------- | ------- |

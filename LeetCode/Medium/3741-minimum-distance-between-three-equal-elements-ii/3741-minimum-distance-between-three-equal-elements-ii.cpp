@@ -9,7 +9,7 @@ public:
 
         int res = INT_MAX;
         for (auto& it : mp) {
-            vector<int> v = it.second;
+            vector<int>& v = it.second;
             if (v.size() < 3) continue;
             for (int j = 0; j < v.size() - 2; j++) {
                 res = min(res, 2 * abs(v[j] - v[j + 2]));

@@ -2,13 +2,13 @@ class Solution {
 public:
     int furthestDistanceFromOrigin(string moves) {
         int dis = 0;
-        int _num = 0;
+        int _count = 0;
         for (char& c : moves) {
             if (c == 'L') dis--;
             else if (c == 'R') dis++;
-            else _num++;
+            else _count++;
         }
 
-        return _num + abs(dis);
+        return _count + abs(dis);
     }
 };

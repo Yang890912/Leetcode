@@ -1,24 +1,25 @@
 class Solution {
 public:
     int minOperations(vector<vector<int>>& grid, int x) {
-        vector<int> elements;
+        int m = grid.size();
+        int n = grid[0].size();
+        int remain = grid[0][0] % x;
+        vector<int> nums;
 
-        for (int i = 0; i < grid.size(); i++) {
-            for (int j = 0; j < grid[0].size(); j++) {
-                elements.push_back(grid[i][j]);
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] % x != remain) return -1;
+                nums.push_back(grid[i][j]);
             }
         }
 
-        sort(elements.begin(), elements.end());
-        int target = elements[elements.size() / 2];
+        sort(nums.begin(), nums.end());
+        int mid = nums[nums.size() / 2];
         int res = 0;
-        for (int i = 0; i < elements.size(); i++) {
-            int k = abs(target - elements[i]);
-            if (k % x != 0) return -1;
-            res += k / x;
+        for (int num : nums) {
+            res += abs(num - mid) / x;
         }
 
         return res;
-
     }
 };

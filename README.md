@@ -122,6 +122,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0396-rotate-function](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0396-rotate-function/) | Medium |
+| [0788-rotated-digits](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0788-rotated-digits/) | Medium |
 | [1622-fancy-sequence](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Hard/1622-fancy-sequence/) | Hard |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
@@ -164,6 +165,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0396-rotate-function](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0396-rotate-function/) | Medium |
+| [0788-rotated-digits](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0788-rotated-digits/) | Medium |
 | [1594-maximum-non-negative-product-in-a-matrix](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
 | [3418-maximum-amount-of-money-robot-can-earn](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3742-maximum-path-score-in-a-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3742-maximum-path-score-in-a-grid/) | Medium |

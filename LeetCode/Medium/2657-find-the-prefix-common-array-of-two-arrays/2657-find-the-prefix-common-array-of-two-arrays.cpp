@@ -8,12 +8,10 @@ public:
 
         for (int i = 0; i < n; i++) {
             table[A[i]]++;
+            if (table[A[i]] == 2) cur++;
+            
             table[B[i]]++;
-            if (A[i] == B[i]) cur++;
-            else {
-                if (table[A[i]] == 2) cur++;
-                if (table[B[i]] == 2) cur++;
-            }
+            if (table[B[i]] == 2) cur++;
 
             res.push_back(cur);
         }

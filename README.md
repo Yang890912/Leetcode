@@ -82,6 +82,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 ## Recursion
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0203-remove-linked-list-elements](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/0203-remove-linked-list-elements/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 ## Simulation
 | Problem Name | Difficulty |
@@ -214,4 +215,8 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0796-rotate-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/0796-rotate-string/) | Easy |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0203-remove-linked-list-elements](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/0203-remove-linked-list-elements/) | Easy |
 <!---LeetCode Topics End-->

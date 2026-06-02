@@ -6,18 +6,15 @@ public:
         int res = INT_MAX;
 
         for (int i = 0; i < n; i++) {
-            int tmp = landStartTime[i] + landDuration[i];
             for (int j = 0; j < m; j++) {
-                if (tmp < waterStartTime[j]) res = min(res, waterStartTime[j] + waterDuration[j]);
-                else res = min(res, tmp + waterDuration[j]);
-            }
-        }
+                int land = landStartTime[i] + landDuration[i];
+                int water = waterStartTime[j] + waterDuration[j];
 
-        for (int j = 0; j < m; j++) {
-            int tmp = waterStartTime[j] + waterDuration[j];
-            for (int i = 0; i < n; i++) {
-                if (tmp < landStartTime[i]) res = min(res, landStartTime[i] + landDuration[i]);
-                else res = min(res, tmp + landDuration[i]);
+                if (land < waterStartTime[j]) res = min(res, water);
+                else res = min(res, land + waterDuration[j]);
+
+                if (water < landStartTime[i]) res = min(res, land);
+                else res = min(res, water + landDuration[i]);
             }
         }
 

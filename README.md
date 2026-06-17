@@ -83,6 +83,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [2833-furthest-point-from-origin](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2833-furthest-point-from-origin/) | Easy |
 | [2839-check-if-strings-can-be-made-equal-with-operations-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2839-check-if-strings-can-be-made-equal-with-operations-i/) | Easy |
 | [2840-check-if-strings-can-be-made-equal-with-operations-ii](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2840-check-if-strings-can-be-made-equal-with-operations-ii/) | Medium |
+| [3612-process-string-with-special-operations-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3612-process-string-with-special-operations-i/) | Medium |
 ## Recursion
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -98,6 +99,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [2075-decode-the-slanted-ciphertext](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2075-decode-the-slanted-ciphertext/) | Medium |
 | [2751-robot-collisions](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Hard/2751-robot-collisions/) | Hard |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
+| [3612-process-string-with-special-operations-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3612-process-string-with-special-operations-i/) | Medium |
 | [3653-xor-after-range-multiplication-queries-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3653-xor-after-range-multiplication-queries-i/) | Medium |
 ## Stack
 | Problem Name | Difficulty |

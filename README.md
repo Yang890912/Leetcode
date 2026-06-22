@@ -73,6 +73,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | ------- | ------- |
 | [0657-robot-return-to-origin](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/0657-robot-return-to-origin/) | Easy |
 | [0796-rotate-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/0796-rotate-string/) | Easy |
+| [1189-maximum-number-of-balloons](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1189-maximum-number-of-balloons/) | Easy |
 | [1545-find-kth-bit-in-nth-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1545-find-kth-bit-in-nth-binary-string/) | Medium |
 | [1758-minimum-changes-to-make-alternating-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1758-minimum-changes-to-make-alternating-binary-string/) | Easy |
 | [1784-check-if-binary-string-has-at-most-one-segment-of-ones](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1784-check-if-binary-string-has-at-most-one-segment-of-ones/) | Easy |
@@ -115,6 +116,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0874-walking-robot-simulation](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0874-walking-robot-simulation/) | Medium |
+| [1189-maximum-number-of-balloons](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1189-maximum-number-of-balloons/) | Easy |
 | [1980-find-unique-binary-string](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1980-find-unique-binary-string/) | Medium |
 | [2657-find-the-prefix-common-array-of-two-arrays](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2657-find-the-prefix-common-array-of-two-arrays/) | Medium |
 | [2784-check-if-array-is-good](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2784-check-if-array-is-good/) | Easy |
@@ -218,6 +220,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 ## Counting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1189-maximum-number-of-balloons](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1189-maximum-number-of-balloons/) | Easy |
 | [2833-furthest-point-from-origin](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/2833-furthest-point-from-origin/) | Easy |
 ## Breadth-First Search
 | Problem Name | Difficulty |

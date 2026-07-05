@@ -5,72 +5,83 @@ public:
 
     int maximumSafenessFactor(vector<vector<int>>& grid) {
         int n = grid.size();
-        vector<vector<int>> copy = grid;
+        
+        if (grid[0][0] == 1 || grid[n - 1][n - 1] == 1) return 0;
+
+        markDis(grid, n);
+
+        int l = 0, r = 2 * n - 2;
+        int res = r;
+        while (l <= r) {
+            int mid = (l + r) / 2;
+            if (bfs(grid, n, mid)) {
+                res = mid;
+                l = mid + 1;
+            }
+            else {
+                r = mid - 1;
+            }
+        }
+
+        return res;
+    }
+
+    void markDis(vector<vector<int>>& grid, int n) {
         queue<pair<int, int>> q;
+        vector<vector<bool>> visited(n, vector<bool>(n, false));
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if (grid[i][j] == 1) q.push({i, j});
+                if (grid[i][j] == 0) continue;
+                q.push({i, j});
+                grid[i][j] = 0;
+                visited[i][j] = true;
             }
         }
-
-        int l = 1, r = 2 * n - 2;
-        while (l <= r) {
-            int mid = (l + r) / 2;
-            fill(grid, q, n, mid - 1);
-            if (bfs(grid, n)) l = mid + 1;
-            else r = mid - 1;
-            grid = copy;
-        }
-
-        return r;
-    }
-
-    void fill(vector<vector<int>>& grid, queue<pair<int, int>> q, int n, int dis) {
-        while (!q.empty() && dis > 0) {
-            int size = q.size();
-            while (size--) {
-                int x = q.front().first;
-                int y = q.front().second;
+        
+        int level = 1;
+        while (!q.empty()) {
+            int s = q.size();
+            while (s--) {
+                int x = q.front().first, y = q.front().second;
                 q.pop();
-                
-                for (int i = 0; i < 4; i++) {
-                    int _x = x + dx[i];
-                    int _y = y + dy[i];
-                    if (_x < 0 || _y < 0 || _x >= n || _y >= n || grid[_x][_y] == 1)
+
+                for (int dir = 0; dir < 4; dir++) {
+                    int nx = x + dx[dir], ny = y + dy[dir];
+                    if (nx < 0 || ny < 0 || nx >= n || ny >= n || visited[nx][ny])
                         continue;
-                    grid[_x][_y] = 1;  
-                    q.push({_x, _y});
+                    grid[nx][ny] = level;
+                    visited[nx][ny] = true; 
+                    q.push({nx, ny});
                 }
             }
-
-            dis--;
+            level++;
         }
     }
 
 
-    bool bfs(vector<vector<int>>& grid, int n) {
-        if (grid[0][0] == 1 || grid[n - 1][n - 1] == 1) return false;
-
-        vector<vector<bool>> visited(n, vector<bool>(n, false));
+    bool bfs(vector<vector<int>>& grid, int n, int dis) {
         queue<pair<int, int>> q;
+        vector<vector<bool>> visited(n, vector<bool>(n, false));
+
+        if (grid[0][0] < dis) return false;
+
         q.push({0, 0});
         visited[0][0] = true;
         while (!q.empty()) {
-            int x = q.front().first;
-            int y = q.front().second;
+            int x = q.front().first, y = q.front().second;
             q.pop();
 
             if (x == n - 1 && y == n - 1) return true;
 
             for (int i = 0; i < 4; i++) {
-                int _x = x + dx[i];
-                int _y = y + dy[i];
-                if (_x < 0 || _y < 0 || _x >= n || _y >= n || grid[_x][_y] == 1 || visited[_x][_y])
+                int nx = x + dx[i];
+                int ny = y + dy[i];
+                if (nx < 0 || ny < 0 || nx >= n || ny >= n || grid[nx][ny] < dis || visited[nx][ny])
                     continue;
-                if (_x == n - 1 && _y == n - 1) return true;
-                visited[_x][_y] = true;  
-                q.push({_x, _y});
+
+                visited[nx][ny] = true;
+                q.push({nx, ny});
             }
         }
 

@@ -82,6 +82,8 @@ public:
 
                 visited[nx][ny] = true;
                 q.push({nx, ny});
+
+                if (x == n - 1 && y == n - 1) return true;
             }
         }
 

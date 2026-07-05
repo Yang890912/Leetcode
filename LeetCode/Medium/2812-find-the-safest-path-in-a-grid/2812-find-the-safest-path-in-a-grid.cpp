@@ -11,19 +11,13 @@ public:
         markDis(grid, n);
 
         int l = 0, r = 2 * n - 2;
-        int res = r;
         while (l <= r) {
             int mid = (l + r) / 2;
-            if (bfs(grid, n, mid)) {
-                res = mid;
-                l = mid + 1;
-            }
-            else {
-                r = mid - 1;
-            }
+            if (bfs(grid, n, mid)) l = mid + 1;
+            else r = mid - 1;
         }
 
-        return res;
+        return r;
     }
 
     void markDis(vector<vector<int>>& grid, int n) {

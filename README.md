@@ -12,6 +12,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [0396-rotate-function](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0396-rotate-function/) | Medium |
 | [0739-daily-temperatures](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0739-daily-temperatures/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/0874-walking-robot-simulation/) | Medium |
+| [1288-remove-covered-intervals](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1288-remove-covered-intervals/) | Medium |
 | [1536-minimum-swaps-to-arrange-a-binary-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1536-minimum-swaps-to-arrange-a-binary-grid/) | Medium |
 | [1559-detect-cycles-in-2d-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Easy/1582-special-positions-in-a-binary-matrix/) | Easy |
@@ -176,6 +177,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 ## Sorting
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1288-remove-covered-intervals](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1288-remove-covered-intervals/) | Medium |
 | [1727-largest-submatrix-with-rearrangements](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1727-largest-submatrix-with-rearrangements/) | Medium |
 | [1833-maximum-ice-cream-bars](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1833-maximum-ice-cream-bars/) | Medium |
 | [2033-minimum-operations-to-make-a-uni-value-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2033-minimum-operations-to-make-a-uni-value-grid/) | Medium |

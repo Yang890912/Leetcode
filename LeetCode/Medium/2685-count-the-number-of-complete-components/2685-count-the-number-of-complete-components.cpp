@@ -1,40 +1,41 @@
 class Solution {
 public:
     int countCompleteComponents(int n, vector<vector<int>>& edges) {
-        vector<bool> used(n, false);
-        vector<vector<int>> adjacent(n, vector<int>());
-        int res = 0;
+        vector<vector<int>> myEdges(n);
 
-        for (int i = 0; i < edges.size(); i++) {
-            adjacent[edges[i][0]].push_back(edges[i][1]);
-            adjacent[edges[i][1]].push_back(edges[i][0]);
+        for(auto& e : edges) {
+            myEdges[e[0]].push_back(e[1]);
+            myEdges[e[1]].push_back(e[0]);
         }
 
+        int res = 0;
+        vector<bool> visited(n, false);
         for (int i = 0; i < n; i++) {
-            if (used[i]) continue;
+            if (visited[i]) continue;
+            
+            int numNodes = 0;
+            int numEdges = 0;
 
-            int numOfEdges = 0;
-            int numOfNodes = 1;
             queue<int> q;
-
             q.push(i);
-            used[i] = true;
+            visited[i] = true;
+
             while (!q.empty()) {
-                int node = q.front();
+                int p = q.front();
                 q.pop();
-                for (int j = 0; j < adjacent[node].size(); j++) {
-                    if (!used[adjacent[node][j]]) {
-                        numOfNodes++;
-                        q.push(adjacent[node][j]);
-                        used[adjacent[node][j]] = true;
-                    }
-                    numOfEdges++;
+                numNodes++;
+                numEdges += myEdges[p].size();
+                for (int np : myEdges[p]) {
+                    if (visited[np]) continue;
+                    q.push(np);
+                    visited[np] = true;
                 }
             }
 
-            if (numOfEdges == numOfNodes * (numOfNodes - 1)) res++;
+            if ((numEdges / 2) == (numNodes * (numNodes - 1) / 2)) res++;
         }
 
         return res;
     }
+
 };

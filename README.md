@@ -223,12 +223,14 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | [1559-detect-cycles-in-2d-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
+| [2685-count-the-number-of-complete-components](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2685-count-the-number-of-complete-components/) | Medium |
 ## Union-Find
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1559-detect-cycles-in-2d-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1559-detect-cycles-in-2d-grid/) | Medium |
 | [1722-minimize-hamming-distance-after-swap-operations](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1722-minimize-hamming-distance-after-swap-operations/) | Medium |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
+| [2685-count-the-number-of-complete-components](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2685-count-the-number-of-complete-components/) | Medium |
 | [2812-find-the-safest-path-in-a-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2812-find-the-safest-path-in-a-grid/) | Medium |
 ## Trie
 | Problem Name | Difficulty |
@@ -245,6 +247,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | ------- | ------- |
 | [1559-detect-cycles-in-2d-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1559-detect-cycles-in-2d-grid/) | Medium |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
+| [2685-count-the-number-of-complete-components](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2685-count-the-number-of-complete-components/) | Medium |
 | [2812-find-the-safest-path-in-a-grid](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2812-find-the-safest-path-in-a-grid/) | Medium |
 ## String Matching
 | Problem Name | Difficulty |
@@ -267,4 +270,5 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2492-minimum-score-of-a-path-between-two-cities](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2492-minimum-score-of-a-path-between-two-cities/) | Medium |
+| [2685-count-the-number-of-complete-components](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/2685-count-the-number-of-complete-components/) | Medium |
 <!---LeetCode Topics End-->

@@ -2,19 +2,22 @@ class Solution {
 public:
     vector<int> arrayRankTransform(vector<int>& arr) {
         int n = arr.size();
-        map<int, vector<int>> mp;
-        vector<int> res(n, 0);
-
-        for (int i = 0; i < n; i++) mp[arr[i]].push_back(i); 
-
+        vector<int> st = arr;
+        sort(st.begin(), st.end());
+        
+        unordered_map<int, int> um;
         int rank = 1;
-        int prev = INT_MAX;
-        for (auto& key : mp) {
-            for (int& val : key.second)
-                res[val] = rank;
-            rank++;
+        for (int i = 0; i < n; i++) {
+            if (um.find(st[i]) == um.end()) {
+                um[st[i]] = rank;
+                rank++;
+            }
         }
 
-        return res;
+        for (int i = 0; i < n; i++) {
+            arr[i] = um[arr[i]];
+        }
+
+        return arr;
     }
 };

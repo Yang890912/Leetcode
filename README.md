@@ -208,6 +208,7 @@ For more details on my LeetCode activity, you can visit my profile: [LeetCode Pr
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [1291-sequential-digits](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/1291-sequential-digits/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/Yang890912/Leetcode/tree/main/LeetCode/Medium/3546-equal-sum-grid-partition-i/) | Medium |
 ## Divide and Conquer
 | Problem Name | Difficulty |
